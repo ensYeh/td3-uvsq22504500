@@ -1,6 +1,8 @@
 package fr.uvsq.cprog.collex.commande;
 
-import fr.uvsq.cprog.collex.Dns.*;
+import fr.uvsq.cprog.collex.Dns;
+import fr.uvsq.cprog.collex.DnsItem;
+import fr.uvsq.cprog.collex.NomMachine;
 
 public class CmdRechercheIP implements Commande {
     private final Dns dns;

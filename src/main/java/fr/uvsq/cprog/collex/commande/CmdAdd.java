@@ -1,6 +1,8 @@
 package fr.uvsq.cprog.collex.commande;
 
-import fr.uvsq.cprog.collex.Dns.*;
+import fr.uvsq.cprog.collex.AdresseIP;
+import fr.uvsq.cprog.collex.Dns;
+import fr.uvsq.cprog.collex.NomMachine;
 
 public class CmdAdd implements Commande {
     private final Dns dns;
