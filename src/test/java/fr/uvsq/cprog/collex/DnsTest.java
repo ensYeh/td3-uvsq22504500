@@ -13,7 +13,7 @@ public class DnsTest {
 
     @Before
     public void setUp() throws IOException {
-        dns = new Dns(Path.of("src/test/resources/dns.txt"));
+        dns = new Dns(Path.of("resources/dns.txt"));
     }
 
     @Test

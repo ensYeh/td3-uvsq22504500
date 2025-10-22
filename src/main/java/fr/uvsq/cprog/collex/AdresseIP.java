@@ -5,16 +5,29 @@ import java.util.regex.Pattern;
 
 
 public class AdresseIP {
-    private final String ip;
-    private static final Pattern IP_PATTERN =
-            Pattern.compile("^(\\d{1,3}\\.){3}\\d{1,3}$");
+    private final String ip;    
 
     public AdresseIP(String ip) {
-        if (!IP_PATTERN.matcher(ip).matches()) {
+        if (!estValide(ip)) {
             throw new IllegalArgumentException("Adresse IP invalide : " + ip);
         }
         this.ip = ip;
     }
+    
+     private boolean estValide(String ip) {
+        String[] parties = ip.split("\\.");
+        if (parties.length != 4) return false;
+        for (String part : parties) {
+            try {
+                int val = Integer.parseInt(part);
+                if (val < 0 || val > 255) return false;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public String getIp() {
         return ip;

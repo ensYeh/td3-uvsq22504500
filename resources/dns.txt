@@ -1,0 +1,5 @@
+aziz.uvsq.fr 210.241.18.10
+cp.uvsq.fr 196.11.3.255
+ecampus.uvsq.fr 193.51.25.12
+poste.uvsq.fr 193.51.31.154
+www.uvsq.fr 193.51.31.90

@@ -1,6 +1,6 @@
 package fr.uvsq.cprog.collex;
 
-import fr.uvsq.cprog.collex.commande.Commande;
+import fr.uvsq.cprog.collex.commande.*;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class DnsTUI {
         System.out.print("> ");
         String ligne = scanner.nextLine();
         String[] parts = ligne.split(" ");
-
+        try {
         if (ligne.equalsIgnoreCase("quit")) {
             return new CmdQuit();
         } else if (parts.length == 1 && parts[0].matches("(\\d{1,3}\\.){3}\\d{1,3}")) {
@@ -30,6 +30,9 @@ public class DnsTUI {
         } else if (parts[0].equals("add") && parts.length == 3) {
             return new CmdAdd(dns, new AdresseIP(parts[1]), new NomMachine(parts[2]));
         }
+    }catch (IllegalArgumentException e){
+        return () -> "Erreur : " + e.getMessage();
+    }
         return () -> "Commande inconnue";
     }
 

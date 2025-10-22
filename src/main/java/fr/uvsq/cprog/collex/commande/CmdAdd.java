@@ -19,9 +19,9 @@ public class CmdAdd implements Commande {
     public String execute() {
         try {
             dns.addItem(ip, nom);
-            return "Ajout effectué";
+            return("Ajout effectué.");
         } catch (Exception e) {
-            return e.getMessage();
+            return ("Erreur : " + e.getMessage());
         }
     }
 }

@@ -10,11 +10,8 @@ import java.util.Properties;
 
 public class DnsApp {
     public static void main(String[] args) throws IOException {
-        Properties prop = new Properties();
-        prop.load(DnsApp.class.getResourceAsStream("/config.properties"));
-        String fichierDns = prop.getProperty("dns.file");
 
-        Dns dns = new Dns(Path.of(fichierDns));
+        Dns dns = new Dns(Path.of("resources/dns.txt"));
         DnsTUI tui = new DnsTUI(dns);
 
         while (true) {
